@@ -10,13 +10,19 @@ generateBtn.addEventListener ("click", function() {
   alert("Answer the prompts to generate a strong password!");
 
 
-  var userLength = prompt("Please enter password length from 8 to 128")
+  
+ 
+  while (true) {
+    var userLength = prompt("Please enter password length from 8 to 128")
   if(userLength >= 8 && userLength <= 128){
     console.log(userLength)
-  } else { 
-    alert("Please enter value between 8 and 128")
+    break;
   }
-  // I tried to use hthe while loop to stop and repeat this prompt if condition was not met but I could not
+  alert("please enter a length that is between 8 and 128")
+}
+
+  // I tried to use the while loop to stop and repeat this prompt if condition was not met but I could not
+
 
   alert("To continue please answer yes or no for the following password criteria");
   var userChoice1 = prompt("do you want lowerCase?")
@@ -26,10 +32,10 @@ generateBtn.addEventListener ("click", function() {
 
   
 
-    lowerCase ='abcdefghijklmnopqrstuvwxyz'
-    upperCase ='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    numeric = '0123456789'
-    specialChar = '`~!@#$%^&*()_-=+{[}]\|:;<,.>/?'
+  var lowerCase ='abcdefghijklmnopqrstuvwxyz'
+  var upperCase ='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+  var numeric = '0123456789'
+  var specialChar = '`~!@#$%^&*()_-=+{[}]\|:;<,.>/?'
 
   var passChar; //all characters mixed together
   
@@ -119,20 +125,15 @@ generateBtn.addEventListener("click", writePassword);
 
 
 
-//pseudocode 
+//pseudocode : thinking through the assignment.  Alot changes during execution. 
 /*
-1) when the red button is clicked, it generates prompts for password criteria
-
-
+1) when the red button is clicked, it generates prompts for password criteria and length of password
+a) generate prompt to ask user for length of password between 8-128
+validate selection and put it in a while loop to repeat the prompt if the condition is not met.
 
 2) generate a series of prompts for password criteria
 
 3)code for user to select criteria for password
-
-
-4) generate promt to ask user for length of password between 8-128
-validate selection
-
 
 5) generate prompt for character..types and user chooses
 lowercase, uppercase, numeric, and special characters
@@ -148,8 +149,4 @@ password  = lowercase+uppercase+numeric+special case
 password = shuffle(password)
 where shuffle is to generate random numbers from password
 7) alert(password) in placeholder="Your Secure Password"
-
-
-
-
 */
